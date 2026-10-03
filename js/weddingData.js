@@ -151,24 +151,24 @@ const weddingData = {
   gallery: [
     {
       url: "assets/gallery_meadow_walk.jpg",
-      caption: "Meadow Walk",
+      caption: "Fixation Celebration",
       class: "masonry-wide"
     },
     {
       url: "assets/gallery_gentle_embrace.jpg",
-      caption: "Gentle Embrace",
+      caption: "",
       class: "masonry-tall",
       style: "object-position: center center;"
     },
     {
       url: "assets/gallery_sunlit_stroll.jpg",
-      caption: "Sunlit Stroll",
+      caption: "",
       class: "masonry-tall",
       style: "object-position: center bottom;"
     },
     {
       url: "assets/gallery_grand_family.jpg",
-      caption: "Family Celebrations",
+      caption: "",
       class: "masonry-wide-tall"
     },
     {
@@ -178,7 +178,7 @@ const weddingData = {
     },
     {
       url: "assets/gallery_bougainvillea_romance.jpg",
-      caption: "Whispered Promises",
+      caption: "",
       class: "masonry-small-square"
     },
     {
@@ -194,18 +194,18 @@ const weddingData = {
     },
     {
       url: "assets/gallery_tender_whisper.jpg",
-      caption: "Tender Moments",
+      caption: "",
       class: "masonry-tall",
       style: "object-position: center center;"
     },
     {
       url: "assets/gallery_family_blessings.jpg",
-      caption: "Family Blessings & Love",
+      caption: "",
       class: "masonry-wide-tall"
     },
     {
       url: "assets/gallery_walking_together.jpg",
-      caption: "Walking Into Forever",
+      caption: "",
       class: "masonry-wide-tall",
       style: "object-position: center center;"
     }
@@ -225,7 +225,7 @@ const weddingData = {
     subtitle: "THE BEGINNING OF FOREVER",
     names: "ANU & ALAN",
     date: "19 • 10 • 2026",
-    thankYou: "THANK YOU FOR BEING PART OF OUR CELEBRATION.",
+    thankYou: "SHARING OUR HAPPINESS WITH OUR BELOVED PAWS, BRUTTY & LOKI",
     closingSignoff: "Join us and let’s celebrate together!"
   }
 };

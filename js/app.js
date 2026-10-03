@@ -61,45 +61,83 @@ function initDataBinding() {
   const heroMainPhoto = document.getElementById('hero-main-photo');
   const cinematicBannerPhoto = document.getElementById('cinematic-banner-photo');
   const heroVideo = document.getElementById('hero-main-video');
-  const heroVideoSource = document.getElementById('hero-video-source');
-  const btnVideoToggle = document.getElementById('btn-hero-video-toggle');
+  const playOverlayBtn = document.getElementById('btn-hero-video-play-overlay');
 
   if (heroMainPhoto) heroMainPhoto.src = weddingData.hero.photo;
   if (cinematicBannerPhoto) cinematicBannerPhoto.src = weddingData.cinematicBanner.photo;
 
-  if (heroVideo && weddingData.hero && weddingData.hero.video) {
+  if (heroVideo) {
     heroVideo.style.display = 'block';
     if (heroMainPhoto) heroMainPhoto.style.display = 'none';
 
-    heroVideo.play().catch((err) => {
-      console.log("Autoplay muted video:", err);
-    });
+    // Enforce mobile attributes
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
 
-    if (btnVideoToggle) {
-      btnVideoToggle.addEventListener('click', (e) => {
+    const attemptPlayVideo = () => {
+      heroVideo.style.display = 'block';
+      if (heroMainPhoto) heroMainPhoto.style.display = 'none';
+
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          if (playOverlayBtn) playOverlayBtn.classList.remove('visible');
+        }).catch((err) => {
+          console.log("Mobile video autoplay deferred:", err);
+          if (playOverlayBtn) playOverlayBtn.classList.add('visible');
+        });
+      }
+    };
+
+    attemptPlayVideo();
+
+    if (playOverlayBtn) {
+      playOverlayBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        heroVideo.style.display = 'block';
-        if (heroMainPhoto) heroMainPhoto.style.display = 'none';
-
-        if (heroVideo.paused) {
-          heroVideo.play();
-          heroVideo.muted = false;
-          btnVideoToggle.classList.add('playing');
-          btnVideoToggle.querySelector('span').textContent = 'AUDIO ON';
-        } else if (!heroVideo.muted) {
-          heroVideo.muted = true;
-          btnVideoToggle.classList.remove('playing');
-          btnVideoToggle.querySelector('span').textContent = 'WATCH VIDEO';
-        } else {
-          heroVideo.muted = false;
-          btnVideoToggle.classList.add('playing');
-          btnVideoToggle.querySelector('span').textContent = 'AUDIO ON';
-        }
+        heroVideo.muted = true;
+        heroVideo.play().then(() => {
+          playOverlayBtn.classList.remove('visible');
+        }).catch((err) => {
+          console.log("Manual video play error:", err);
+        });
       });
     }
-  } else {
-    if (heroVideo) heroVideo.style.display = 'none';
-    if (heroMainPhoto) heroMainPhoto.style.display = 'block';
+
+    heroVideo.addEventListener('click', () => {
+      if (heroVideo.paused) {
+        heroVideo.play().then(() => {
+          if (playOverlayBtn) playOverlayBtn.classList.remove('visible');
+        });
+      } else {
+        heroVideo.pause();
+        if (playOverlayBtn) playOverlayBtn.classList.add('visible');
+      }
+    });
+
+    const unlockVideoOnGesture = () => {
+      if (heroVideo.paused) {
+        attemptPlayVideo();
+      }
+      window.removeEventListener('touchstart', unlockVideoOnGesture);
+      window.removeEventListener('click', unlockVideoOnGesture);
+      window.removeEventListener('pointerdown', unlockVideoOnGesture);
+    };
+    window.addEventListener('touchstart', unlockVideoOnGesture, { passive: true });
+    window.addEventListener('click', unlockVideoOnGesture, { passive: true });
+    window.addEventListener('pointerdown', unlockVideoOnGesture, { passive: true });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && heroVideo.paused) {
+            attemptPlayVideo();
+          }
+        });
+      }, { threshold: 0.15 });
+      observer.observe(heroVideo);
+    }
   }
 
   // Render Gallery Grid
@@ -501,7 +539,7 @@ function renderGalleryGrid() {
 
   container.innerHTML = weddingData.gallery.map((item, idx) => `
     <div class="gallery-item ${item.class || ''} scroll-reveal" onclick="openLightbox(${idx})">
-      <img src="${item.url}" alt="${item.caption}" class="gallery-img" loading="lazy" />
+      <img src="${item.url}" alt="${item.caption}" class="gallery-img" style="${item.style || ''}" loading="lazy" />
       <div class="gallery-caption-overlay">
         <span class="gallery-caption-text">${item.caption}</span>
       </div>

@@ -52,7 +52,7 @@
 
     <!-- FULLSCREEN PHOTO BACKGROUND -->
     <div class="cover-photo-bg-wrapper">
-      <img src="assets/couple_real.jpg" alt="Anu & Alan Background" class="cover-bg-photo">
+      <img src="assets/couple_opening.jpg" alt="Anu & Alan Background" class="cover-bg-photo">
       <div class="cover-bg-overlay"></div>
     </div>
 
@@ -146,9 +146,16 @@
         <div class="hero-arch-photo-wrapper">
           <div class="arch-photo-frame">
             <!-- Video Player (Autoplay loop muted video) -->
-            <video id="hero-main-video" class="hero-full-video" src="assets/couple_video.mp4" autoplay loop muted playsinline poster="assets/couple_real.jpg">
+            <video id="hero-main-video" class="hero-full-video" src="assets/couple_video.mp4" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="assets/couple_real.jpg">
               <source id="hero-video-source" src="assets/couple_video.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
             </video>
+
+            <!-- Manual Play Overlay Button (Visible when mobile browser blocks autoplay) -->
+            <button id="btn-hero-video-play-overlay" class="hero-video-play-btn" aria-label="Play Couple Video" title="Play Video">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span>PLAY VIDEO</span>
+            </button>
 
             <!-- Fallback Couple Photo -->
             <img id="hero-main-photo" src="assets/couple_real.jpg" alt="Anu and Alan" class="hero-full-photo">
@@ -253,7 +260,7 @@
             <!-- Photo Box + Overlapping Info Card Panel -->
             <div class="photo-card-composite">
               <div class="editorial-photo-box bride-photo-box">
-                <img id="bride-photo" src="assets/couple_real.jpg" alt="Bride ANU" class="editorial-portrait-photo bride-portrait">
+                <img id="bride-photo" src="assets/bride_real.jpg" alt="Bride ANU" class="editorial-portrait-photo bride-portrait">
                 <div class="photo-inner-border"></div>
               </div>
               <div class="couple-info-card bride-info-card">
@@ -285,7 +292,7 @@
             <!-- Photo Box + Overlapping Info Card Panel -->
             <div class="photo-card-composite">
               <div class="editorial-photo-box groom-photo-box">
-                <img id="groom-photo" src="assets/couple_real.jpg" alt="Groom ALAN" class="editorial-portrait-photo groom-portrait">
+                <img id="groom-photo" src="assets/groom_real.jpg" alt="Groom ALAN" class="editorial-portrait-photo groom-portrait">
                 <div class="photo-inner-border"></div>
               </div>
               <div class="couple-info-card groom-info-card">
@@ -373,7 +380,7 @@
 
         <!-- Action Button -->
         <div class="event-btn-wrapper">
-          <a href="#" onclick="event.preventDefault();" class="btn-maps-gold">
+          <a href="https://maps.app.goo.gl/TkvL8RkuArqJGC2D6" target="_blank" rel="noopener noreferrer" class="btn-maps-gold">
             <span>VIEW ON MAPS</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
@@ -445,7 +452,7 @@
 
         <!-- Action Button -->
         <div class="event-btn-wrapper">
-          <a href="#" onclick="event.preventDefault();" class="btn-maps-gold">
+          <a href="https://maps.app.goo.gl/rqkTq378eZDQjPDv6?g_st=" target="_blank" rel="noopener noreferrer" class="btn-maps-gold">
             <span>VIEW ON MAPS</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
@@ -503,6 +510,12 @@
             <div class="program-subtitle">MARRIAGE CEREMONY</div>
             <div class="program-time">3:00 PM</div>
             <div class="program-venue">St. Sebastian’s Catholic Church, Mutholapuram</div>
+            <div class="event-btn-wrapper" style="margin-top: 1.1rem;">
+              <a href="https://maps.app.goo.gl/hKXL1Wccuh5rJzL69?g_st=iw" target="_blank" rel="noopener noreferrer" class="btn-maps-gold">
+                <span>VIEW ON MAPS</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
 
           <div class="program-divider-line"></div>
@@ -512,15 +525,13 @@
             <div class="program-subtitle">RECEPTION</div>
             <div class="program-time">7:00 PM</div>
             <div class="program-venue">Jacobs Entertainments Convention Center & Health Park,<br>Pandapilly, Muvattupuzha</div>
+            <div class="event-btn-wrapper" style="margin-top: 1.1rem;">
+              <a href="https://maps.app.goo.gl/neYKNVsBryiryjSM7?g_st=iw" target="_blank" rel="noopener noreferrer" class="btn-maps-gold">
+                <span>VIEW ON MAPS</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
-        </div>
-
-        <!-- Action Button -->
-        <div class="event-btn-wrapper">
-          <a href="#" onclick="event.preventDefault();" class="btn-maps-gold">
-            <span>VIEW ON MAPS</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
         </div>
 
       </div>
@@ -528,7 +539,7 @@
 
     <!-- PAGE 6 — CINEMATIC COUPLE PHOTO -->
     <section id="cinematic-banner-section" class="cinematic-full-banner">
-      <img id="cinematic-banner-photo" src="assets/couple_real.jpg" alt="Cinematic Banner" class="cinematic-bg-photo">
+      <img id="cinematic-banner-photo" src="assets/cinematic_banner.jpg" alt="Cinematic Banner" class="cinematic-bg-photo">
       <div class="cinematic-content scroll-reveal">
         <h2 class="cinematic-quote">
           AND SO,<br>

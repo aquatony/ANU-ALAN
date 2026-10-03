@@ -10,14 +10,14 @@ const weddingData = {
     fullName: "ALAN",
     parents: "S/o Mrs. deepa salo & Mr. salo george",
     bio: "An architect who finds beauty in timeless structures, classical music, and quiet moments.",
-    image: "assets/couple_real.jpg"
+    image: "assets/groom_real.jpg"
   },
   bride: {
     name: "ANU",
     fullName: "ANU",
     parents: "D/o Mrs. sajy tony & Mr. tony jose",
     bio: "A designer passionate about art, poetry, and bringing warmth into every space.",
-    image: "assets/couple_real.jpg"
+    image: "assets/bride_real.jpg"
   },
 
   // Main Event Date & Countdown Configuration — October 19, 2026
@@ -67,7 +67,7 @@ const weddingData = {
       time: "6:00 PM ONWARDS",
       location: "OUR HOME",
       photo: "assets/sangeet_night.png",
-      mapsUrl: "#"
+      mapsUrl: "https://maps.app.goo.gl/TkvL8RkuArqJGC2D6"
     },
     betrothal: {
       title: "BETROTHAL",
@@ -79,7 +79,7 @@ const weddingData = {
       ceremonyTime: "6:00 PM",
       ceremonyHall: "Zion Parish Hall",
       photo: "assets/betrothal_ceremony.png",
-      mapsUrl: "#"
+      mapsUrl: "https://maps.app.goo.gl/rqkTq378eZDQjPDv6?g_st="
     },
     marriage: {
       title: "MARRIAGE",
@@ -91,7 +91,8 @@ const weddingData = {
       ceremonyTime: "7:00 PM",
       ceremonyHall: "Jacobs Entertainments Convention Center & Health Park, Pandapilly, Muvattupuzha",
       photo: "assets/marriage_ceremony.png",
-      mapsUrl: "#"
+      mapsUrlChurch: "https://maps.app.goo.gl/hKXL1Wccuh5rJzL69?g_st=iw",
+      mapsUrlHall: "https://maps.app.goo.gl/neYKNVsBryiryjSM7?g_st=iw"
     }
   },
 
@@ -101,7 +102,7 @@ const weddingData = {
     line2: "OUR FOREVER",
     line3: "BEGINS.",
     monogram: "A & A",
-    photo: "assets/couple_real.jpg"
+    photo: "assets/cinematic_banner.jpg"
   },
 
   // Page 7 & Page 8: Event Details & Venues
@@ -149,34 +150,64 @@ const weddingData = {
   // Page 10: Asymmetric Masonry Editorial Photo Gallery
   gallery: [
     {
-      url: "assets/couple_real.jpg",
-      caption: "Eternal Vows & Starlight",
-      class: "masonry-large-portrait"
+      url: "assets/gallery_meadow_walk.jpg",
+      caption: "Meadow Walk",
+      class: "masonry-wide"
     },
     {
-      url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=1000",
+      url: "assets/gallery_gentle_embrace.jpg",
+      caption: "Gentle Embrace",
+      class: "masonry-tall",
+      style: "object-position: center center;"
+    },
+    {
+      url: "assets/gallery_sunlit_stroll.jpg",
+      caption: "Sunlit Stroll",
+      class: "masonry-tall",
+      style: "object-position: center bottom;"
+    },
+    {
+      url: "assets/gallery_grand_family.jpg",
+      caption: "Family Celebrations",
+      class: "masonry-wide-tall"
+    },
+    {
+      url: "assets/gallery_golden_moments.jpg",
       caption: "Golden Hour Romance",
       class: "masonry-small-square"
     },
     {
-      url: "assets/couple_real.jpg",
+      url: "assets/gallery_bougainvillea_romance.jpg",
       caption: "Whispered Promises",
-      class: "masonry-tall"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=1400",
-      caption: "The Beginning of Forever",
-      class: "masonry-wide"
-    },
-    {
-      url: "assets/couple_real.jpg",
-      caption: "Intimate Elegance",
       class: "masonry-small-square"
     },
     {
-      url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=1000",
-      caption: "Sacred Ring Details",
-      class: "masonry-detail"
+      url: "assets/gallery_sparkler_celebration.jpg",
+      caption: "Sparkler Celebration Night",
+      class: "masonry-wide"
+    },
+    {
+      url: "assets/gallery_forever_mine.jpg",
+      caption: "Forever & Always",
+      class: "masonry-tall",
+      style: "object-position: center center;"
+    },
+    {
+      url: "assets/gallery_tender_whisper.jpg",
+      caption: "Tender Moments",
+      class: "masonry-tall",
+      style: "object-position: center center;"
+    },
+    {
+      url: "assets/gallery_family_blessings.jpg",
+      caption: "Family Blessings & Love",
+      class: "masonry-wide-tall"
+    },
+    {
+      url: "assets/gallery_walking_together.jpg",
+      caption: "Walking Into Forever",
+      class: "masonry-wide-tall",
+      style: "object-position: center center;"
     }
   ],
 
